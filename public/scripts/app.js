@@ -16,7 +16,7 @@ function createTweetElement({ user: { avatars, name, handle }, content, created_
   $header.appendTo($tweet);
   let $p = $("<p>").addClass("littletweet").text(content.text).appendTo($tweet);
   let $footer = $("<footer>").addClass("footer");
-  let $timestamp = $("<div>").text(created_at).appendTo($footer);
+  let $timestamp = $("<div>").addClass("timestamp").text(moment(created_at).fromNow()).appendTo($footer);
   let $icons = $("<div>").addClass("icons");
   let $flag =$("<i>").addClass("far fa-flag").appendTo($icons);
   let $heart =$("<i>").addClass("far fa-heart").appendTo($icons);
