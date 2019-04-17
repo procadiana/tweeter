@@ -82,11 +82,22 @@ const data = [
 function renderTweets (tweets){
   tweets.forEach(element =>{
     $('#tweets-container').append(createTweetElement(element));}
- )};
+)};
 
 
 $(document).ready(function(){
  renderTweets(data);
+
+function loadTweets(){
+  $.ajax('/tweets',{ method: 'GET' })
+    .then(function(res){
+      console.log(res);
+      renderTweets(res);
+    });
+  }
+
+loadTweets();
 });
+
 
 

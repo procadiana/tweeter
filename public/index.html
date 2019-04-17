@@ -27,6 +27,25 @@
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+     $(function() { //document ready function
+       $('form').on('submit', function(event) {
+         event.preventDefault();
+         let data = $(this).serialize();
+         // console.log('data', data);
+         $.ajax({
+           url: '/tweets',
+           method: 'POST',
+           data: data
+         }).then(
+           (res) => { console.log('Success', res) }, // success (200-300)
+           (err) => { console.log('Error') } // 400-500
+         )
+       });
+     });
+    </script>
+
     <!-- Date format JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
@@ -72,6 +91,7 @@
     </main>
     <!-- External JS - Character Counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </body>
