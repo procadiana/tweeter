@@ -1,14 +1,18 @@
-.tweetContainer {
-  opacity: 0.7;
-  border-radius: 5px;
-  border: 1px solid #c6c6c6;
+#tweets-container {
   width: 350px;
   margin-left: 3em;
   margin-right: 3em;
-  margin-top:12px;
-
 }
-article header {
+
+.tweet {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+}
+
+header {
   border-radius: 4px;
   border: 0.5px;
   background-color: #e0e0e0;
@@ -18,40 +22,44 @@ article header {
   justify-content: space-between;
 }
 
-header h3 {
+article header h3 {
   display: inline-block;
   width: 50%;
   line-height: 40px;
   margin: 0;
 }
 
-.littletweet {
+ .tweet .littletweet {
   border-bottom: 0.5px solid lightgrey;
   padding-top: 20px;
   padding-left: 5px;
   padding-bottom: 27px;
   padding-right: 20px;
   width: 349px;
-
 }
 
-article footer {
+.tweet footer {
   font-size: 9px;
   margin: 0;
   padding-left: 5px;
+  padding-bottom: 10px;
 }
 
-article.tweet footer {
-  display: flex;
-  justify-content: space-between;
+article.tweet footer .icons{
+  visibility: hidden;
+  padding: 10px 0px;
 }
 
-article.tweet footer .icons i {
-  padding-right: 10px;
+.tweet:hover .icons {
+  visibility: visible;
 }
 
+.icons i {
+  float: right;
+  padding: 0px 5px;
+}
 
-.handler  {
+article header .handler  {
   font-size: 13px;
   color: #999a9b;
   padding: 0;
@@ -62,14 +70,13 @@ article.tweet footer .icons i {
   margin: 0;
 }
 
-.profile {
+article header .profile {
   width: 35px;
   height: 35px;
   margin: 5px;
-
 }
 
-.tweetContainer:hover {
+.tweet:hover {
   opacity: 1;
 }
 
