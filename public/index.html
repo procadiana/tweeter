@@ -38,6 +38,7 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <button id="compose" <i class="far fa-edit"></i>> Compose </button>
       <span class="header">Tweeter</span>
     </nav>
 
@@ -50,27 +51,27 @@
           <textarea name="text" id="tweet" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet" id="button">
           <span id="counter">140</span>
+          <div>
+            <label for="empty_tweet" id="empty_tweet">
+              <p class="error"><i class="fas fa-exclamation-circle"></i>
+              <span class="error"> Empty Tweet! Please insert text</span></p>
+            </label>
+
+            <label for="long_tweet" id="long_tweet">
+              <p class="error"><i class="fas fa-exclamation-circle"></i>
+              <span class="error"> Tweet too long! Please rephrase :)</span></p>
+            </label>
+          </div>
         </form>
+
+
       </section>
       <section id="tweets-container">
-        <!-- <article class="tweet">
-          <header class="tweet-header">
-            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/emojipedia/181/deaf-woman-light-skin-tone_1f9cf-1f3fb-200d-2640-fe0f.png" class ="profile">
-            <h3 class="name">Bill Fields</h3>
-            <p class="handler">@mrTweety<p>
-          </header>
-            <div class="littletweet">Little tweet</div>
-          <footer class="footer">
-            <p class="timestamp">10 days ago</p>
-            <div class="icons"><i class="far fa-flag"></i><i class="fas fa-retweet"></i><i class="far fa-heart"></i></div>
-          </footer>
-        </article> -->
+
       </section>
     </main>
     <!-- External JS - Character Counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </body>
 </html>

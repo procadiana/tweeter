@@ -35,7 +35,6 @@ article header h3 {
   padding-left: 5px;
   padding-bottom: 27px;
   padding-right: 20px;
-  /*width: 349px;*/
 }
 
 article.tweet footer {
@@ -80,4 +79,9 @@ article header .profile {
 .tweet:hover {
   opacity: 1;
 }
+
+
+
+
+
 

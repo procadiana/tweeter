@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//-------->Creates the html structure of the tweet
 
 function createTweetElement({ user: { avatars, name, handle }, content, created_at }) {
   let $tweet = $("<article>").addClass("tweet");
@@ -24,11 +25,14 @@ function createTweetElement({ user: { avatars, name, handle }, content, created_
   return $tweet;
 }
 
+//-------->Adds the tweets to the #tweet-countainer
 function renderTweets (tweets){
   tweets.forEach(element =>{
     $('#tweets-container').prepend(createTweetElement(element));}
 )};
 
+
+//-------->Adds new tweets
 $(document).ready(function(){
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -47,13 +51,21 @@ $(document).ready(function(){
     )
   });
 
-function loadTweets(){
-  $.ajax('/tweets',{ method: 'GET' })
-    .then(function(res){
-      renderTweets(res);
-    });
-  }
-  loadTweets();
+//-------->Loads new tweet without refreshing the window
+  function loadTweets(){
+    $.ajax('/tweets',{ method: 'GET' })
+      .then(function(res){
+        renderTweets(res);
+      });
+    }
+    loadTweets();
+
+//-------->Function toggling the Compose Tweet section when clicking the Compose button
+  $('#compose').on('click', function toggle() {
+    $('.new-tweet').slideToggle('fast', (function() {
+      $('#tweet').select();
+    }));
+  });
 });
 
 

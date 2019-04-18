@@ -2,27 +2,37 @@ $(document).ready(function() {
   let elem = document.getElementById('tweet');
   let button = document.getElementById('button');
   elem.addEventListener('keyup', countCharacters, false);
+  button.addEventListener('click', emptyTweetValidation);
 
-  button.addEventListener('click', function(){
-
+//--------> Function validating if a tweet is empty and showing error
+  function emptyTweetValidation(){
     let value = document.getElementById('tweet').value;
     if (value.length === 0){
       event.preventDefault();
-      alert("Please enter a tweet");
+      $( "#empty_tweet" ).slideDown( "slow", function() {
+      });
     }
-  })
+  }
 
+//--------> Function counting characters and displaying errors if the case
   function countCharacters(event) {
     let input = document.getElementById('tweet').value;
     let counter = (140 - (input.length));
     let countRemaining = document.getElementById('counter');
     if (counter >= 0){
       countRemaining.textContent = counter;
+      $( "#empty_tweet" ).slideUp( "slow", function() {
+      });
+      $( "#long_tweet" ).slideUp( "slow", function() {
+      });
+      countRemaining.style.color = '#244751';
     }
     else {
       countRemaining.textContent = counter;
       countRemaining.style.color = 'red';
-      alert("Tweet too long!!!");
+      $( "#long_tweet" ).slideDown( "slow", function() {
+      });
     }
   };
 });
+
