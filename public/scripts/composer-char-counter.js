@@ -4,8 +4,10 @@ $(document).ready(function() {
   elem.addEventListener('keyup', countCharacters, false);
 
   button.addEventListener('click', function(){
+
     let value = document.getElementById('tweet').value;
     if (value.length === 0){
+      event.preventDefault();
       alert("Please enter a tweet");
     }
   })
