@@ -35,8 +35,15 @@ textarea {
 
 #empty_tweet{
   display: none;
+  color: #D8000C;
+  height: 20px;
+  padding: 0;
+
 }
 
 #long_tweet{
   display: none;
+  color: #D8000C;
+  height: 20px;
+  padding: 0;
 }
