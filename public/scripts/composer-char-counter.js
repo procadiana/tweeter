@@ -26,6 +26,7 @@ $(document).ready(function() {
       $( "#long_tweet" ).slideUp( "slow", function() {
       });
       countRemaining.style.color = '#244751';
+
     }
     else {
       countRemaining.textContent = counter;

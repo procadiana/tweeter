@@ -45,7 +45,9 @@ $(document).ready(function(){
       (res) => {
         loadTweets();
         let form = document.getElementById('form');
+        let counter = document.getElementById('counter');
         form.reset();
+        counter.textContent = '140';
       },
       (err) => { console.log('Error') }
     )
