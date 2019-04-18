@@ -1,6 +1,6 @@
 # :star::star: Tweeter :star::star:
 
-Tweeter is a sinbgle-page AJAX-based Twitter clone. It used JQuery, HTML5 and CSS.
+Tweeter is a single-page AJAX-based Twitter clone. It used JQuery, HTML5 and CSS.
 
 ## Tweeter has the following features:
 
