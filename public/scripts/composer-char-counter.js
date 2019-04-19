@@ -2,15 +2,17 @@ $(document).ready(function() {
   let elem = document.getElementById('tweet');
   let button = document.getElementById('button');
   elem.addEventListener('keyup', countCharacters, false);
+  button.addEventListener('click', countCharacters, false);
   button.addEventListener('click', emptyTweetValidation);
+
+
 
 //--------> Function validating if a tweet is empty and showing error
   function emptyTweetValidation(){
     let value = document.getElementById('tweet').value;
     if (value.length === 0){
       event.preventDefault();
-      $( "#empty_tweet" ).slideDown( "slow", function() {
-      });
+      $( "#empty_tweet" ).slideDown( "slow");
     }
   }
 
@@ -28,11 +30,12 @@ $(document).ready(function() {
       countRemaining.style.color = '#244751';
 
     }
-    else {
+    else if(counter < 0) {
+      event.preventDefault();
+      event.stopPropagation();
       countRemaining.textContent = counter;
       countRemaining.style.color = 'red';
-      $( "#long_tweet" ).slideDown( "slow", function() {
-      });
+      $( "#long_tweet" ).slideDown( "slow");
     }
   };
 });

@@ -3,7 +3,7 @@
 // Simulates the kind of delay we see with network or filesystem operations
 const simulateDelay = require("./util/simulate-delay");
 
-// Defines helper functions for saving and getting tweets, using the database `db`
+// Defines helper functions for saving and getting tweets, using mongodb
 module.exports = function makeDataHelpers(db) {
   return {
 

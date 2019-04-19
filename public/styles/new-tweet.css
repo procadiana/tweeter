@@ -28,6 +28,12 @@ textarea {
   padding-left: 6px;
 }
 
+.littletweet{
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+}
+}
+
 #counter {
   margin-right: 0px;
   float: right;

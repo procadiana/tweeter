@@ -7,6 +7,7 @@
 //-------->Creates the html structure of the tweet
 
 function createTweetElement({ user: { avatars, name, handle }, content, created_at }) {
+
   let $tweet = $("<article>").addClass("tweet");
   let $header = $("<header>").addClass("tweet-header");
   let $avatar = $("<img>").addClass("profile").attr("src",avatars.small).appendTo($header);
